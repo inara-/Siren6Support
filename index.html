@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>風来のシレン6 値段識別ツール</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Zen+Maru+Gothic:wght@500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>風来のシレン6 値段識別</h1>
+            <p>店での売買価格からアイテムを識別します</p>
+        </header>
+
+        <main>
+            <section class="search-panel">
+                <div class="input-group">
+                    <label for="price-input">価格</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="price-input" placeholder="価格を入力 (例: 1000)" autofocus>
+                        <button id="clear-btn" aria-label="クリア">×</button>
+                    </div>
+                </div>
+
+                <div class="transaction-type">
+                    <label class="radio-label">
+                        <input type="radio" name="transaction" value="buy">
+                        <span>買値 (店で買う)</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="transaction" value="sell" checked>
+                        <span>売値 (店に売る)</span>
+                    </label>
+                </div>
+
+                <div class="category-filter">
+                    <span class="filter-label">カテゴリ:</span>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-category="all">すべて</button>
+                        <button class="filter-btn" data-category="weapon">武器</button>
+                        <button class="filter-btn" data-category="shield">盾</button>
+                        <button class="filter-btn" data-category="bracelet">腕輪</button>
+                        <button class="filter-btn" data-category="scroll">巻物</button>
+                        <button class="filter-btn" data-category="grass">草</button>
+                        <button class="filter-btn" data-category="staff">杖</button>
+                        <button class="filter-btn" data-category="pot">壺</button>
+                    </div>
+                </div>
+
+                <div class="actions-panel">
+                    <button id="reset-identified-btn" class="secondary-btn">識別済みをリセット</button>
+                </div>
+            </section>
+
+            <section class="results-panel">
+                <div id="results-container" class="results-grid">
+                    <!-- Results will be injected here -->
+                    <div class="placeholder-message">価格を入力してください</div>
+                </div>
+            </section>
+
+            <!-- Custom Modal -->
+            <div id="confirm-modal" class="modal hidden">
+                <div class="modal-content">
+                    <p>識別済みのアイテムをすべてリセットしますか？</p>
+                    <div class="modal-actions">
+                        <button id="modal-cancel-btn" class="secondary-btn">キャンセル</button>
+                        <button id="modal-confirm-btn" class="primary-btn">リセット</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
