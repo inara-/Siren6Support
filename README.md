@@ -2,6 +2,8 @@
 
 風来のシレン6のアイテムを、店での売買価格から識別するためのWebツールです。
 
+[👉 アプリを開く (Open App)](https://inara-.github.io/Siren6Support/)
+
 ![Screenshot](assets/screenshot.png)
 
 ## 機能 (Features)
